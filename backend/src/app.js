@@ -44,7 +44,7 @@ app.get('/api', (req, res) => {
 app.get('/api/health', async (req, res) => {
   try {
     const supabase = require('./config/supabase');
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('notes')
       .select('count')
       .limit(1);
